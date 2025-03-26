@@ -1,0 +1,28 @@
+name: Build  AppImage 
+
+on: workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+ 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+
+    - name:  install dependecies
+      run: |
+        bash build.sh
+        upload=$(cat file)
+        echo "FILE1=${upload}" >> $GITHUB_ENV 
+
+  
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+          tag_name: 1.1.1
+          files: |
+              ${{ env.FILE1 }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
