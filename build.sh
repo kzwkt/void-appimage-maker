@@ -26,5 +26,6 @@ chmod a+x ./$APP.AppDir/AppRun
 
 ARCH=x86_64 ./appimagetool-x86_64.AppImage $APP.AppDir
 
+rm appimagetool-x86_64.AppImage
 file=$(realpath *.AppImage)
 echo $file > file
