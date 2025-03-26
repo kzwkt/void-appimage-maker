@@ -1,4 +1,4 @@
-sudo apt install wget tar xz-utils 
+sudo apt install wget tar xz-utils zstd
 wget https://repo-default.voidlinux.org/static/xbps-static-latest.x86_64-musl.tar.xz
 wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
 chmod +x appimagetool-x86_64.AppImage
@@ -29,7 +29,7 @@ cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
 sed -i 's|^Exec=.*|Exec=mpv|' $APP.AppDir/mpv.desktop
 cp mpv.AppDir/usr/share/icons/hicolor/scalable/apps/mpv.svg mpv.AppDir/
 
-ARCH=x86_64 ./appimagetool-x86_64.AppImage $APP.AppDir
+ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20  $APP.AppDir
 
 rm appimagetool-x86_64.AppImage
 file=$(realpath *.AppImage)
