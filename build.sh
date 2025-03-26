@@ -24,6 +24,8 @@ exec ${HERE}/usr/bin/mpv "$@"
 EOF
 chmod a+x ./$APP.AppDir/AppRun
 
+
+# cp cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
  cat >> ./$APP.AppDir/mpv.desktop << 'EOF'
 Type=Application
 Name=mpv Media Player
