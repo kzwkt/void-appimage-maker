@@ -24,6 +24,19 @@ exec ${HERE}/usr/bin/mpv "$@"
 EOF
 chmod a+x ./$APP.AppDir/AppRun
 
+ cat >> ./$APP.AppDir/mpv.desktop << 'EOF'
+Type=Application
+Name=mpv Media Player
+Icon=mpv
+Exec=mpv
+Terminal=false
+Categories=AudioVideo;Audio;Video;Player;TV;
+MimeType=application/ogg;application/x-ogg;application/mxf;application/sdp;application/smil;application/x-smil;application/streamingmedia;application/x-streamingmedia;application/vnd.rn-realmedia;application/vnd.rn-realmedia-vbr;audio/aac;au>
+X-KDE-Protocols=ftp,http,https,mms,rist,rtmp,rtsp,srt,webdav,webdavs
+StartupWMClass=mpv
+Keywords=mpv;media;player;video;audio;tv;
+EOF
+
 
 ARCH=x86_64 ./appimagetool-x86_64.AppImage $APP.AppDir
 
