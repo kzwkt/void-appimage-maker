@@ -1,4 +1,4 @@
-sudo apt install wget tar xz-utils zstd
+sudo apt install wget tar xz-utils zstd zsync
 wget https://repo-default.voidlinux.org/static/xbps-static-latest.x86_64-musl.tar.xz
 wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
 chmod +x appimagetool-x86_64.AppImage
@@ -7,6 +7,7 @@ tar xf xbps-static-latest.x86_64-musl.tar.xz
 export XBPS_ARCH=x86_64  
 export ARCH=x86_64
 export SSL_NO_VERIFY_PEER=true   
+UPINFO="gh-releases-zsync|$GITHUB_REPOSITORY_OWNER|void-appimage-maker|latest|*$ARCH.AppImage.zsync"
 APP="mpv"
 mkdir -p $APP.AppDir/var/db/xbps/keys
 cp var/db/xbps/keys/* $APP.AppDir/var/db/xbps/keys
@@ -31,7 +32,7 @@ sed -i 's|^Exec=.*|Exec=mpv|' $APP.AppDir/mpv.desktop
 cp mpv.AppDir/usr/share/icons/hicolor/scalable/apps/mpv.svg mpv.AppDir/
 rm -rf $APP.AppDir/var/
 
-ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20  $APP.AppDir
+ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20  $APP.AppDir -u "$UPINFO"
 
 rm appimagetool-x86_64.AppImage
 file=$(realpath *.AppImage)
