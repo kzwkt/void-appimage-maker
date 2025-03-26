@@ -10,7 +10,7 @@ APP="mpv"
 mkdir -p $APP.AppDir/var/db/xbps/keys
 cp var/db/xbps/keys/* $APP.AppDir/var/db/xbps/keys
 ./usr/bin/xbps-install -Sy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" $APP
-./usr/bin/xbps-remove -RFfy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" gtk+3 glibc icu-libs
+./usr/bin/xbps-remove -RFfy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" gtk+3 libxcrypt-compat glibc libpcre2 libffi zlib util-linux-common libblkid libmount libzstd liblzma bzip2 libelf glib fontconfig libXau libXdmcp libxcb libX11 libXext libXrender lzo pixman cairo libgcc libstd
 
  cat >> ./$APP.AppDir/AppRun << 'EOF'
 #!/bin/sh
