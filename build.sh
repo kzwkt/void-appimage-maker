@@ -28,6 +28,7 @@ chmod a+x ./$APP.AppDir/AppRun
 cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
 sed -i 's|^Exec=.*|Exec=mpv|' $APP.AppDir/mpv.desktop
 cp mpv.AppDir/usr/share/icons/hicolor/scalable/apps/mpv.svg mpv.AppDir/
+rm -rf $APP.AppDir/var/
 
 ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20  $APP.AppDir
 
