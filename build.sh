@@ -6,6 +6,7 @@ tar xf xbps-static-latest.x86_64-musl.tar.xz
 
 export XBPS_ARCH=x86_64  
 export ARCH=x86_64
+export SSL_NO_VERIFY_PEER=true   
 APP="mpv"
 mkdir -p $APP.AppDir/var/db/xbps/keys
 cp var/db/xbps/keys/* $APP.AppDir/var/db/xbps/keys
