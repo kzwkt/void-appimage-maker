@@ -9,19 +9,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-
     - name:  install dependecies
       run: |
         bash build.sh
-        upload=$(cat file)
-        echo "FILE1=${upload}" >> $GITHUB_ENV 
+        echo "FILE1=$(realpath *.AppImage)" >> $GITHUB_ENV
+        echo "FILE2=$(realpath *.zsync)" >> $GITHUB_ENV 
 
-  
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
           tag_name: 1.1.1
           files: |
               ${{ env.FILE1 }}
+              ${{ env.FILE2 }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
