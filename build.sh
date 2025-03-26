@@ -25,7 +25,7 @@ EOF
 chmod a+x ./$APP.AppDir/AppRun
 
 
-cp cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
+cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
 sed -i 's|^Exec=.*|Exec=mpv|' $APP.AppDir/mpv.desktop
 cp mpv.AppDir/usr/share/icons/hicolor/scalable/apps/mpv.svg mpv.AppDir/
  cat >> ./$APP.AppDir/mpv.desktop << 'EOF'
