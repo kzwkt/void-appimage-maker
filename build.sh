@@ -7,7 +7,6 @@ tar xf xbps-static-latest.x86_64-musl.tar.xz
 export XBPS_ARCH=x86_64  
 export ARCH=x86_64
 APP="mpv"
-echo $APP > app
 
 ./usr/bin/xbps-install -Sy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" $APP
 ./usr/bin/xbps-remove -RFf -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" gtk+3 glibc icu-libs
