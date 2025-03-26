@@ -26,6 +26,7 @@ chmod a+x ./$APP.AppDir/AppRun
 
 
 # cp cp ./$APP.AppDir/usr/share/applications/mpv.desktop ./$APP.AppDir
+cp mpv.AppDir/usr/share/icons/hicolor/scalable/apps/mpv.svg mpv.AppDir/
  cat >> ./$APP.AppDir/mpv.desktop << 'EOF'
 Type=Application
 Name=mpv Media Player
