@@ -10,7 +10,7 @@ APP="mpv"
 mkdir -p $APP.AppDir/var/db/xbps/keys
 cp var/db/xbps/keys/* $APP.AppDir/var/db/xbps/keys
 ./usr/bin/xbps-install -Sy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" $APP
-./usr/bin/xbps-remove -RFfy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" gtk+3 libxcrypt-compat glibc libpcre2 libffi zlib util-linux-common libblkid libmount libzstd liblzma bzip2 libelf glib fontconfig libXau libXdmcp libxcb libX11 libXext libXrender lzo pixman cairo libgcc libstd
+./usr/bin/xbps-remove -RFfy -r $APP.AppDir -R "https://repo-default.voidlinux.org/current" gtk+3 libxcrypt-compat glibc libpcre2 libffi zlib util-linux-common libblkid libmount libzstd liblzma bzip2 libelf glib fribidi brotli libpng freetype expat fontconfig  libXau libXdmcp libxcb libX11 libXext libXrender lzo pixman cairo libgcc libstdc++ icu-libs graphite libharfbuzz  libpciaccess libdrm libXfixes wayland libva ncurses-libs libreadline8 libxml2 libtasn1 p11-kit libunistring libidn2 gmp nettle libcrypto3 libssl3 libsodium  libevent libunbound gnutls alsa-lib  vulkan-loader lcms2 libgomp libsamplerate dbus-libs avahi-libs eudev-libudev libuuid libXtst libcap libelogind libfftw libglvnd libXcursor libXi libXrandr libxkbfile xkbcomp xkeyboard-config libxkbcommon libdatrie libthai pango libjpeg-turbo shared-mime-info jbigkit-libs tiff gdk-pixbuf gtk-update-icon-cache librsvg adwaita-icon-theme  dbus-x11 libepoxy libXdamage libXcomposite libXinerama atk at-spi2-core  at-spi2-atk  libxcrypt libcups libusb json-glib libgusb libcolord  libgbm acl liblz4 libarchive  
 
  cat >> ./$APP.AppDir/AppRun << 'EOF'
 #!/bin/sh
