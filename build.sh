@@ -1,4 +1,4 @@
-sudo apt install wget tar xz-utils arch-install-scripts
+sudo apt install wget tar xz-utils 
 wget https://repo-default.voidlinux.org/static/xbps-static-latest.x86_64-musl.tar.xz
 wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
 chmod +x appimagetool-x86_64.AppImage
