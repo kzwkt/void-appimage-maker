@@ -35,5 +35,3 @@ rm -rf $APP.AppDir/var/
 ARCH=x86_64 ./appimagetool-x86_64.AppImage --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20  $APP.AppDir -u "$UPINFO"
 
 rm appimagetool-x86_64.AppImage
-file=$(realpath *.AppImage)
-echo $file > file
